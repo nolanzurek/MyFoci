@@ -1,0 +1,140 @@
+h1,
+h2 {
+  font-family: "Montserrat";
+  font-weight: 800;
+}
+
+h1 {
+  font-size: 40px;
+  text-decoration: underline;
+  text-decoration-color: #cad0d7;
+  text-decoration-thickness: 0.2em;
+  color: #424242;
+}
+
+h2 {
+  font-size: 25px;
+  text-decoration: underline;
+  text-decoration-color: #66d4f1;
+  text-decoration-thickness: 0.2em;
+  color: #153c4c;
+}
+
+p {
+  color: #153c4c;
+  font-family: "Helvetica";
+  margin: 0px;
+  font-size: 20px;
+}
+
+.group {
+  background: #cad0d7;
+  border-radius: 7px;
+  padding: 0px;
+  margin: 0px 0px 20px 0px;
+}
+
+.groupTitle {
+  background: linear-gradient(
+    -90deg,
+    rgba(94, 156, 234, 1) 0%,
+    rgba(58, 173, 217, 1) 100%
+  );
+  padding: 10px;
+  border-radius: 7px 7px 0px 0px;
+  margin-bottom: 10px;
+}
+
+.task {
+  background: #ffffff;
+  padding: 7.5px;
+  margin: 10px;
+  border-radius: 7px;
+  width: calc(100% - 45px - 38px);
+}
+
+input {
+  padding: 7.5px;
+  margin: 0px 10px 10px 10px;
+  border-radius: 7px;
+  color: #383838;
+  font-family: "Helvetica";
+  font-size: 20px;
+  border: none;
+  /* A little wacky, but it works (as long as total padding is 40px)*/
+  width: calc(100% - 35px);
+  background-color: #a9b0bb;
+  outline: none;
+}
+
+ul {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+}
+
+li {
+  margin: 0px;
+  padding: 0px;
+}
+
+.newGroupInput {
+  font-family: "Montserrat";
+  font-weight: 800;
+  background: rgb(158, 210, 106);
+  background: linear-gradient(
+    90deg,
+    rgba(158, 210, 106, 1) 0%,
+    rgb(70, 206, 111) 100%
+  );
+  font-size: 25px;
+  padding: 10px;
+  margin: 0px 0px;
+  border-radius: 7px;
+  width: calc(100% - 20px);
+  color: rgb(9, 109, 39);
+  text-decoration: underline;
+  text-decoration-thickness: 0.2em;
+  text-decoration-color: #d8f1c4;
+}
+
+body {
+  background-color: #f4f6f9;
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+.closeButton {
+  float: right;
+  margin-right: 10px;
+  height: 38px;
+  width: 38px;
+  border: none;
+  border-radius: 7px;
+  background: rgb(255, 160, 139);
+}
+
+.closeButton:hover {
+  background: rgb(255, 133, 105);
+  cursor: pointer;
+}
+
+.closeButton:active {
+  background: rgb(117, 117, 117);
+  cursor: pointer;
+}
+
+.taskDiv {
+}
+
+.GroupTitleDiv {
+  position: relative;
+}
+.upDownIndicator {
+  position: absolute;
+  top: 13px;
+  right: 10px;
+  width: 38px;
+  text-align: center;
+}
