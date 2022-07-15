@@ -2,7 +2,6 @@ import Task from "./Task.js";
 import React, { useState } from "react";
 
 function Group(props) {
-  const [curTasks, setTasks] = useState([]);
   const [curHidden, setHidden] = useState(true);
   return (
     <div className="group">
@@ -23,25 +22,34 @@ function Group(props) {
         <p className="upDownIndicator">{curHidden ? "" : "🡇"}</p>
       </div>
       <ul className="tasklist" id={"tasksUl" + props.mkey}>
-        {curTasks.map((task, i) => (
+        {props.tasks.map((task, i) => (
           <li key={i} className="taskListItem">
             <div className="taskDiv">
               <button
                 className="closeButton"
-                onClick={() => {
-                  setTasks(
-                    curTasks
-                      .filter((item) => item.key != i)
-                      .map((item, i) => ({
-                        task: item.task,
-                        key: i,
-                      }))
+                title={task}
+                mkey={i}
+                onClick={(event) => {
+                  props.mutator(
+                    props.data.map((obj, k) => {
+                      if (obj.title === props.title && k === props.mkey) {
+                        return {
+                          title: obj.title,
+                          tasks: obj.tasks.filter(
+                            (task2, j) =>
+                              task2 !== event.target.title || j !== i
+                          ),
+                        };
+                      } else {
+                        return obj;
+                      }
+                    })
                   );
                 }}
               >
                 ❌
               </button>
-              <Task key={i} title={task.task} className="taskComponent" />
+              <Task key={i} title={task} className="taskComponent" />
             </div>
           </li>
         ))}
@@ -50,10 +58,16 @@ function Group(props) {
           <input
             onKeyPress={(event) => {
               if (event.key === "Enter" && event.target.value != "") {
-                setTasks(
-                  curTasks.concat({
-                    task: [event.target.value],
-                    key: curTasks.length,
+                props.mutator(
+                  props.data.map((obj, k) => {
+                    if (obj.title === props.title && k === props.mkey) {
+                      return {
+                        title: obj.title,
+                        tasks: obj.tasks.concat([event.target.value]),
+                      };
+                    } else {
+                      return obj;
+                    }
                   })
                 );
                 event.target.value = "";

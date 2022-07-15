@@ -43,6 +43,7 @@ p {
   padding: 10px;
   border-radius: 7px 7px 0px 0px;
   margin-bottom: 10px;
+  cursor: pointer;
 }
 
 .task {
