@@ -1,5 +1,7 @@
-# myFoci
+# My Foci
 A simple tasklist application using react.js and electron
+
+![Screenshot of My Foci](public/myFociScreenshot.png)
 
 ## Usage
 ### Categories
